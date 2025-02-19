@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Zen+Dots&display=swap");
+
+@tailwind base;
+@layer base {
+  :root {
+    --white: #ffffff;
+    --black: #000000;
+    --blue: #006ce7;
+    --gray: #eeeeee;
+    --nunito-sans: "Nunito Sans", "sans-serif", "system-ui";
+    --zen-dots: "Zen Dots", "sans-serif", "system-ui";
+  }
+
+  * {
+    font-family: var(--nunito-sans) !important;
+  }
+
+  .font-zen-dots {
+    font-family: var(--zen-dots) !important;
+  }
+
+  ::selection {
+    @apply bg-blue text-white;
+  }
+
+  input:autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-text-fill-color: #000000;
+    transition: background-color 100000s ease-in-out 0s;
+    box-shadow: none;
+  }
+}
+
+@tailwind components;
+@layer components {
+  .max-w {
+    @apply w-full max-w-screen-lg;
+  }
+
+  .logo {
+    @apply leading-none sm:text-2xl xs:text-xl text-lg tracking-wide uppercase font-bold text-blue mt-1;
+    font-family: var(--zen-dots) !important;
+  }
+
+  .icon {
+    @apply transition-all active:scale-90 sm:rounded-lg rounded-md sm:size-8 size-7 flex flex-col items-center justify-center sm:text-base text-sm leading-none;
+  }
+
+  .icon-black {
+    @apply icon bg-black/5 hover:bg-black/10 fill-black text-black;
+  }
+
+  .icon-svg {
+    @apply sm:size-4 size-3.5;
+  }
+
+  .h1 {
+    @apply sm:text-4xl text-3xl font-bold leading-[1.1];
+  }
+
+  .text {
+    @apply sm:text-lg text-base leading-snug;
+  }
+
+  .input {
+    @apply w-full sm:text-lg text-base leading-none outline-none rounded-lg p-3 sm:h-13 h-12 placeholder:text-black/60 bg-transparent border-1.5 border-black/10 focus:border-blue;
+  }
+}
+
+@tailwind utilities;
+
+.tox .tox-edit-area::before {
+  border-width: 1.5px !important;
+  border-radius: 0 !important;
+}
+
+.tox-tinymce {
+  border: 1.5px solid #0000001a !important;
+}
+
+.tox:not(.tox-tinymce-inline) .tox-editor-header {
+  box-shadow: none !important;
+  border-bottom: 1.5px solid #0000001a !important;
+}
+
+.tox .tox-statusbar {
+  border-top: 1.5px solid #0000001a !important;
+}
+
+.tox .tox-mbtn {
+  font-size: 1rem !important;
+
+  @media (max-width: 640px) {
+    font-size: 0.875rem !important;
+  }
+}
